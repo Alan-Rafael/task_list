@@ -1,0 +1,21 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+    <form method="post">
+            {% csrf_token %}
+        {{form_task.as_p}}
+        <button type="submit">Cadastrar</button>
+        <a href="{% url 'list_tasks' %}" >Listar</a>
+
+    </form>
+
+
+
+</body>
+</html>

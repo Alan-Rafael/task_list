@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Data</th>
+            <th>Status</th>
+        </tr>
+        {% for task in tarefas %}
+        <tr>
+            <td>{{task.title}}</td>
+            <td>{{task.description}}</td>
+            <td>{{task.data}}</td>
+            <td>{{task.get_status_display}}</td>
+            <td> <a href="{url 'edit_task'}">Editar</a></td>
+
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="{% url 'cadastre_task' %}" >Cadastrar</a>
+
+</body>
+</html>
