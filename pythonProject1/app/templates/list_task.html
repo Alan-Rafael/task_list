@@ -21,7 +21,7 @@
             <td>{{task.get_status_display}}</td>
             <td><a href="{% url 'list_edit' pk=task.pk %}">Editar</a></td>
             <td></td>
-            <td><a href="{% url 'list_edit' pk=task.pk %}">excluir</a></td>
+            <td><a href="{% url 'delete_task' pk=task.pk %}">excluir</a></td>
 
 
         </tr>

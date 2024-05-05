@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from .forms import TaskForm
 from .models import Tasks
 
@@ -32,3 +32,13 @@ def list_edit(request, pk):
         task_form_edit = TaskForm(instance=task)
 
     return render(request, 'list_edit.html', {'task_form_edit': task_form_edit})
+
+
+def delete_task(request, pk):
+    task = get_object_or_404(Tasks, pk=pk)
+
+    if request.method == 'POST':
+        task.delete()
+        return redirect('list_tasks')
+
+    return render(request, 'confirm_delete_task.html', {'task': task})
