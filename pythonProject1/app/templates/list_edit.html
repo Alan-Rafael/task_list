@@ -5,6 +5,12 @@
     <title>Title</title>
 </head>
 <body>
+    <h1>I'ts Edit</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{task_form_edit.as_p}}
+        <button type="submit">Cadastrar</button>
+    </form>
 
 </body>
 </html>
